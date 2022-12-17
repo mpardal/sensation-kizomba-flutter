@@ -3,9 +3,12 @@ import 'package:my_first_app_flutter/signUp/inputSection.dart';
 import 'package:my_first_app_flutter/signUp/signUpButton.dart';
 import 'package:my_first_app_flutter/signUp/signUpPageButton.dart';
 import 'package:my_first_app_flutter/signUp/bottomSection.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+  SignUpPage({Key? key}) : super(key: key);
+
+  FirebaseAuth auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,13 +49,7 @@ class SignUpPage extends StatelessWidget {
           ),
         ),
         body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [Colors.black12, Colors.black38, Colors.black87],
-            ),
-          ),
+          decoration: BoxDecoration(color: Colors.black38),
           child: Column(
             children: [inputSectionSignUp, SignUpPageButton, bottomSection],
           ),

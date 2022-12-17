@@ -51,19 +51,13 @@ class LoginPage extends StatelessWidget {
           ),
         ),
         body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [Colors.black12, Colors.black38, Colors.black87],
-            ),
-          ),
+          decoration: BoxDecoration(color: Colors.black38),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 logoIcon,
-                inputSection,
+                InputSection(),
                 const ConnexionButton(),
                 createAccount,
                 forgetButton,
@@ -74,6 +68,10 @@ class LoginPage extends StatelessWidget {
   }
 
   void loginToFirebase() {
+    final emailField = TextEditingController();
+    final passwordField = TextEditingController();
+    print(emailField.text.trim());
+    print(passwordField.text.trim());
     try {
       auth
           .signInWithEmailAndPassword(

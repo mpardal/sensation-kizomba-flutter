@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app_flutter/card/cardScreen.dart';
 import 'package:my_first_app_flutter/event/evenement.dart';
 import 'package:my_first_app_flutter/header.dart';
 
@@ -49,7 +50,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [Evenement, Evenement],
+          children: [CardScreen()],
         ),
       ),
     );

@@ -16,8 +16,10 @@ Future<void> main() async {
   auth.authStateChanges().listen((User? user) {
     if (user == null) {
       print('Utilisateur non connecté');
+      runApp(LoginPage());
     } else {
       print('Utilisateur connecté :' + user.email!);
+      runApp(HomePage());
     }
   });
   runApp(
@@ -28,7 +30,7 @@ Future<void> main() async {
       routes: {
         '/': (context) => const HomePage(),
         '/login': (context) => LoginPage(),
-        '/signUp': (context) => const SignUpPage(),
+        '/signUp': (context) => SignUpPage(),
         '/nantes': (context) => const NantesPage()
       },
     ),

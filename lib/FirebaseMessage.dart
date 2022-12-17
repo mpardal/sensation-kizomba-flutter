@@ -2,10 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:my_first_app_flutter/MessageDesign.dart';
 
+final infos = FirebaseFirestore.instance.collection('events');
+
 class FirebaseMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    CollectionReference infos = FirebaseFirestore.instance.collection('events');
     return FutureBuilder<DocumentSnapshot>(
         future: infos.doc('1PJEH6GqarZQyqGId658').get(),
         builder:
@@ -22,7 +23,7 @@ class FirebaseMessage extends StatelessWidget {
             return MessageDesign(
               titleMessage: data["title"],
               address: data["address"],
-              date: data["date"],
+              //date: data["date"],
             );
           }
           return Text("Chargement en cours");
