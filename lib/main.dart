@@ -5,7 +5,7 @@ import 'package:my_first_app_flutter/login/login.dart';
 import 'package:my_first_app_flutter/signUp/signUpPage.dart';
 import 'package:my_first_app_flutter/header.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+//import 'firebase_options.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 

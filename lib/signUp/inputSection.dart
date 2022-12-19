@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+final firstnameField = TextEditingController();
+final lastnameField = TextEditingController();
+final emailField = TextEditingController();
+final passwordField = TextEditingController();
+
 Widget inputSectionSignUp = Container(
   margin: const EdgeInsets.all(30),
   child: Column(
@@ -31,9 +36,10 @@ Widget inputSectionSignUp = Container(
               width: 230,
               child: Center(
                 child: TextField(
+                  controller: firstnameField,
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
-                    hintText: "identenfiant",
+                    hintText: "Prénom",
                     border: InputBorder.none,
                   ),
                 ),
@@ -70,6 +76,22 @@ Widget inputSectionSignUp = Container(
               width: 230,
               child: Center(
                 child: TextField(
+                  controller: lastnameField,
+                  textAlign: TextAlign.center,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    hintText: 'Nom de famille',
+                    border: InputBorder.none,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 60,
+              width: 230,
+              child: Center(
+                child: TextField(
+                  controller: emailField,
                   textAlign: TextAlign.center,
                   decoration: InputDecoration(
                       hintText: "Adresse e-mail", border: InputBorder.none),
@@ -107,6 +129,7 @@ Widget inputSectionSignUp = Container(
               width: 230,
               child: Center(
                 child: TextField(
+                  controller: passwordField,
                   textAlign: TextAlign.center,
                   obscureText: true,
                   decoration: InputDecoration(
@@ -140,20 +163,6 @@ Widget inputSectionSignUp = Container(
                 Icons.date_range,
                 size: 30,
                 color: Color.fromARGB(255, 221, 218, 218),
-              ),
-            ),
-            SizedBox(
-              height: 60,
-              width: 230,
-              child: Center(
-                child: TextField(
-                  textAlign: TextAlign.center,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    hintText: 'Date de naissance',
-                    border: InputBorder.none,
-                  ),
-                ),
               ),
             ),
           ],

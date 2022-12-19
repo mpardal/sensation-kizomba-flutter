@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app_flutter/card/cardScreen.dart';
-import 'package:my_first_app_flutter/event/evenement.dart';
-import 'package:my_first_app_flutter/header.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:my_first_app_flutter/login/logout.dart';
+import 'package:my_first_app_flutter/login/userInfos.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -45,13 +45,15 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [CardScreen()],
-        ),
+      body: Column(
+        children: [
+          const SizedBox(height: 30),
+          SizedBox(
+            height: 300,
+            child: UtilisateurInfos(),
+          ),
+          LogoutButton()
+        ],
       ),
     );
   }

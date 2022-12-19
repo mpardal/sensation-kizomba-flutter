@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ConnexionButton extends StatelessWidget {
-  const ConnexionButton({super.key});
+  ConnexionButton({super.key});
+
+  FirebaseAuth auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +24,26 @@ class ConnexionButton extends StatelessWidget {
         ),
       ),
       onPressed: () {
-        Navigator.pushNamed(context, '/');
+        loginToFirebase();
       },
     );
+  }
+
+  void loginToFirebase() {
+    final emailField = TextEditingController();
+    final passwordField = TextEditingController();
+    print(emailField.text.trim());
+    print(passwordField.text.trim());
+    try {
+      auth
+          .signInWithEmailAndPassword(
+              email: emailField.text.trim(),
+              password: passwordField.text.trim())
+          .then((value) {
+        print(value.toString());
+      });
+    } catch (e) {
+      print(e.toString());
+    }
   }
 }

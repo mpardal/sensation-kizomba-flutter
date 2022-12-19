@@ -58,30 +58,12 @@ class LoginPage extends StatelessWidget {
               children: [
                 logoIcon,
                 InputSection(),
-                const ConnexionButton(),
+                ConnexionButton(),
                 createAccount,
                 forgetButton,
               ],
             ),
           ),
         ));
-  }
-
-  void loginToFirebase() {
-    final emailField = TextEditingController();
-    final passwordField = TextEditingController();
-    print(emailField.text.trim());
-    print(passwordField.text.trim());
-    try {
-      auth
-          .signInWithEmailAndPassword(
-              email: emailField.text.trim(),
-              password: passwordField.text.trim())
-          .then((value) {
-        print(value.toString());
-      });
-    } catch (e) {
-      print(e.toString());
-    }
   }
 }
